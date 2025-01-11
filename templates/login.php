@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - PixelClean</title>
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
@@ -68,5 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Ingresar</button>
         </form>
     </div>
+		    <?php include('footer.php'); ?>
 </body>
 </html>

@@ -50,21 +50,18 @@ if ((int)$_SESSION['role_id'] !== 2) {
             </div>
         </div>
         <div class="row mt-4">
+      
             <div class="col-md-6">
                 <div class="card text-center p-3">
-                    <h5 class="card-title">Escanear Código QR</h5>
-                    <a href="#" class="btn btn-warning">Iniciar Escaneo</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card text-center p-3">
-                    <h5 class="card-title">Detalles de la Zona</h5>
+                    <h5 class="card-title">Jornada</h5>
                     <a href="#" class="btn btn-warning">Ver Detalles</a>
                 </div>
             </div>
         </div>
     </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	  <?php include('footer2.php'); ?>
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</body>
+
 </html>
