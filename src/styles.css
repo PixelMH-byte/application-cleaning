@@ -1,0 +1,45 @@
+/* Estilos generales */
+body {
+    background-color: #F2D8A7;
+    color: #454773;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #F2C84B;
+}
+
+.navbar-brand {
+    color: #454773;
+    font-weight: bold;
+}
+
+/* Estilos para las tarjetas (cards) */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para botones */
+.btn-warning {
+    background-color: #F2C84B;
+    border: none;
+    color: #454773;
+    font-weight: bold;
+}
+
+.btn-warning:hover {
+    background-color: #E0B843;
+    color: #ffffff;
+}
+
+/* Margen en la parte superior */
+.container {
+    margin-top: 2rem;
+}
