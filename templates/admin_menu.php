@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+
+// Validar roles
+if ($_SESSION['role_id'] !== '1' && basename($_SERVER['PHP_SELF']) === 'admin_menu.php') {
+    header('Location: worker_menu.php');
+    exit;
+}
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +23,19 @@
     <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">PixelClean</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-danger" href="../logout.php">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="container mt-4">
@@ -56,4 +81,5 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>

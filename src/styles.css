@@ -1,10 +1,13 @@
 /* Estilos generales */
 body {
-    background-color: #F2D8A7;
-    color: #454773;
     font-family: Arial, sans-serif;
+    background-color: #F2D8A7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-
 /* Estilos para la barra de navegación */
 .navbar {
     background-color: #F2C84B;
@@ -42,4 +45,68 @@ body {
 /* Margen en la parte superior */
 .container {
     margin-top: 2rem;
+}
+
+
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #454773;
+    margin-bottom: 20px;
+}
+
+.login-container .error {
+    color: #F2C84B;
+    margin-bottom: 10px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #454773;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #454773;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #2e2f5b;
+}
+/* estilos logout */
+
+.logout-button {
+    color: #ffffff;
+    background-color: #454773;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #2e2f5b;
 }
