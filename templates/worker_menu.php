@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Validar roles
-if ($_SESSION['role_id'] !== '2' && basename($_SERVER['PHP_SELF']) === 'worker_menu.php') {
+if ((int)$_SESSION['role_id'] !== 2) {
     header('Location: admin_menu.php');
     exit;
 }
@@ -32,7 +32,7 @@ if ($_SESSION['role_id'] !== '2' && basename($_SERVER['PHP_SELF']) === 'worker_m
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-danger" href="../logout.php">Cerrar Sesión</a>
+                        <a class="nav-link btn btn-outline-danger" href="../db/logout.php">Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>

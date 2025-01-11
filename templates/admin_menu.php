@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Validar roles
-if ($_SESSION['role_id'] !== '1' && basename($_SERVER['PHP_SELF']) === 'admin_menu.php') {
+if ((int)$_SESSION['role_id'] !== 1) {
     header('Location: worker_menu.php');
     exit;
 }
@@ -32,7 +32,7 @@ if ($_SESSION['role_id'] !== '1' && basename($_SERVER['PHP_SELF']) === 'admin_me
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-danger" href="../logout.php">Cerrar Sesión</a>
+                        <a class="nav-link btn btn-outline-danger" href="../db/logout.php">Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>
@@ -78,8 +78,10 @@ if ($_SESSION['role_id'] !== '1' && basename($_SERVER['PHP_SELF']) === 'admin_me
                     <a href="#" class="btn btn-warning">Descargar</a>
                 </div>
             </div>
+	
         </div>
     </div>
+	
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>

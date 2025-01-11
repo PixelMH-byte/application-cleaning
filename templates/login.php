@@ -2,15 +2,19 @@
 session_start();
 require_once '../db/Database.php';
 
+// Mostrar errores para depuración (quitar en producción)
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
 
     // Conexión a la base de datos
     $database = new Database();
     $conn = $database->getConnection();
 
-    // Consultar al usuario
+    // Consultar usuario por email
     $query = "SELECT * FROM users WHERE email = :email";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':email', $email);
@@ -18,17 +22,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // Verificar usuario y contraseña
     if ($user && password_verify($password, $user['password'])) {
         // Guardar datos en la sesión
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['name'] = $user['name'];
         $_SESSION['email'] = $user['email'];
-        $_SESSION['role_id'] = $user['role_id'];
+        $_SESSION['role_id'] = (int)$user['role_id'];
 
         // Redirigir según el rol
-        if ($user['role_id'] === '1') { // Rol 1: Admin
+        if ($_SESSION['role_id'] === 1) { // Rol administrador
             header('Location: admin_menu.php');
-        } else { // Rol 2: Trabajador
+        } elseif ($_SESSION['role_id'] === 2) { // Rol trabajador
             header('Location: worker_menu.php');
         }
         exit;
@@ -50,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <h1>Iniciar Sesión</h1>
         <?php if (isset($error)): ?>
-            <p class="error"><?= $error ?></p>
+            <p class="error"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
         <form method="POST">
             <label for="email">Correo electrónico:</label>
