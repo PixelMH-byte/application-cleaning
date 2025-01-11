@@ -2,15 +2,29 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #F2D8A7;
+	 margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.row {
+	
+	margin-top: calc(9 * var(--bs-gutter-y)) !important;
+}
+
+
+.content {
+    flex: 1;
+    padding-top: 80px; /* Evita que el contenido quede oculto tras el navbar */
+	
 }
 /* Estilos para la barra de navegación */
 .navbar {
     background-color: #F2C84B;
+	
 }
 
 .navbar-brand {
@@ -44,7 +58,7 @@ body {
 
 /* Margen en la parte superior */
 .container {
-    margin-top: 2rem;
+   padding-top: 80px;
 }
 
 
@@ -127,9 +141,94 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-
+.btn-primary{
+	background-color: #ffc107 !important;
+	border: none !important;
+}
+.btn-primary:hover{
+	 background-color: #454773 !important;
+	border: none !important;
+}
 .logout-button:hover {
     background-color: #ffc107;
+	
+	
+}
+
+/* Tabla personalizada */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #ffc107; /* Borde de la tabla */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Encabezado de la tabla */
+.table thead th {
+    background-color: #ffc107; /* Fondo amarillo */
+    color: #000; /* Texto negro */
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #f8f9fa; /* Separador entre encabezado y cuerpo */
+}
+
+/* Filas de la tabla */
+.table tbody tr {
+    background-color: #ffffff; /* Fondo blanco */
+    transition: background-color 0.3s ease; /* Efecto al pasar el ratón */
+}
+
+/* Alternar filas */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+/* Hover en filas */
+.table tbody tr:hover {
+    background-color: #ffe4a1; 
+}
+
+/* Celdas */
+.table td, .table th {
+    padding: 12px 15px;
+    text-align: center; 
+    vertical-align: middle;
+    border: 1px solid #ffc107; 
+}
+
+/* Botones dentro de las tablas */
+.table .btn {
+    background-color: #ffc107; 
+    color: #000; /* Texto negro */
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.table .btn:hover {
+    background-color: #e0a800; /* Más oscuro al pasar */
+    color: #fff; /* Texto blanco */
+}
+
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer small {
+    color: #adb5bd;
+    font-size: 12px;
 }
 /* responsive moviles */
 @media (max-width: 768px) {

@@ -54,7 +54,7 @@ if ((int)$_SESSION['role_id'] !== 1) {
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Zonas</h5>
-                    <a href="#" class="btn btn-warning">Configurar</a>
+                    <a href="manage_zones.php" class="btn btn-warning">Configurar</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
@@ -77,8 +77,11 @@ if ((int)$_SESSION['role_id'] !== 1) {
             </div>
         </div>
     </div>
+	    <?php include('footer.php'); ?>
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	
 </body>
 </html>
