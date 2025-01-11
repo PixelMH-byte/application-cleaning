@@ -48,59 +48,80 @@ body {
 }
 
 
-
+/* Estilos generales del formulario de login */
 .login-container {
-    background-color: #ffffff;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .login-container h1 {
-    color: #454773;
+    text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .login-container .error {
-    color: #F2C84B;
+    color: red;
+    text-align: center;
     margin-bottom: 10px;
 }
 
+/* Estilos del logo */
+.login-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Estilos de los campos de formulario */
 .login-container label {
     display: block;
-    margin-bottom: 8px;
-    text-align: left;
-    color: #454773;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
 }
 
 .login-container input {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
+/* Botón de enviar */
 .login-container button {
     width: 100%;
     padding: 10px;
-    background-color: #454773;
-    color: #ffffff;
+    background-color: #ffc107;
     border: none;
-    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .login-container button:hover {
-    background-color: #2e2f5b;
+    background-color: #454773;
 }
-/* estilos logout */
+
 
 .logout-button {
     color: #ffffff;
-    background-color: #454773;
+    
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
@@ -108,5 +129,11 @@ body {
 }
 
 .logout-button:hover {
-    background-color: #2e2f5b;
+    background-color: #ffc107;
+}
+/* responsive moviles */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 80px !important; 
+    }
 }

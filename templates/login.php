@@ -53,6 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="login-container">
+	    <div class="login-logo">
+            <img src="../src/logoclean.png" alt="PixelClean Logo">
+        </div>
         <h1>Iniciar Sesión</h1>
         <?php if (isset($error)): ?>
             <p class="error"><?= htmlspecialchars($error) ?></p>

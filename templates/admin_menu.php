@@ -23,65 +23,62 @@ if ((int)$_SESSION['role_id'] !== 1) {
     <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">PixelClean</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-danger" href="../db/logout.php">Cerrar Sesión</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../src/logoclean.png" alt="PixelClean Logo" width="60" height="60" class="d-inline-block align-text-top me-2">
+                <span style="color:#ffc107; font-size: 24px;">Admin Portal</span>
+            </a>
+            <a href="../db/logout.php" class="btn d-flex align-items-center logout-button">
+                <img src="../src/logout.png" alt="Logout" width="40" height="40" class="d-inline-block"> 
+            </a>
         </div>
     </nav>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card text-center p-3">
+
+    <!-- Contenido principal -->
+    <div class="container mt-5 mt-sm-4">
+        <div class="row gy-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Control de Precios</h5>
                     <a href="#" class="btn btn-warning">Gestionar</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Costes de Personal</h5>
                     <a href="#" class="btn btn-warning">Ver Costes</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Zonas</h5>
                     <a href="#" class="btn btn-warning">Configurar</a>
                 </div>
             </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card text-center p-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Usuarios</h5>
                     <a href="#" class="btn btn-warning">Administrar</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Estadísticas</h5>
                     <a href="#" class="btn btn-warning">Resumen</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Informes</h5>
                     <a href="#" class="btn btn-warning">Descargar</a>
                 </div>
             </div>
-	
         </div>
     </div>
-	
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>
