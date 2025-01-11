@@ -60,7 +60,7 @@ if ((int)$_SESSION['role_id'] !== 1) {
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
                     <h5 class="card-title">Usuarios</h5>
-                    <a href="#" class="btn btn-warning">Administrar</a>
+                    <a href="admin/create_user.php" class="btn btn-warning">Administrar</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
