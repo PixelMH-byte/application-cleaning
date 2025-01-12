@@ -60,7 +60,10 @@ body {
     background-color: #E0B843;
     color: #ffffff;
 }
-
+.btn-danger {
+ background-color: red !important;
+	
+}
 /* Margen en la parte superior */
 .container {
     flex: 1; /* Permite que el contenido se expanda hasta el footer */

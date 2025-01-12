@@ -21,12 +21,12 @@
             const result = await response.json();
 
             const alertContainer = document.getElementById('alertContainer');
-            alertContainer.innerHTML = ''; // Limpiar mensajes previos
+            alertContainer.innerHTML = ''; 
 
             if (result.success) {
                 alertContainer.innerHTML = `<div class="alert alert-success">${result.success}</div>`;
-                form.reset(); // Limpiar el formulario
-                loadWorkers(); // Recargar la tabla de trabajadores
+                form.reset(); 
+                loadWorkers(); // cargar modulo get_workers.php para obtener los trabajadores disponibles en la tabla
             } else if (result.error) {
                 alertContainer.innerHTML = `<div class="alert alert-danger">${result.error}</div>`;
             }
@@ -47,6 +47,7 @@
                         <td>${worker.email}</td>
                         <td>
                             <button class="btn btn-primary" onclick="openAssignModal(${worker.id})">Asignar Tareas</button>
+                            <button class="btn btn-danger" onclick="deleteWorker(${worker.id})">X</button>
                         </td>
                     </tr>
                 `;
@@ -75,8 +76,7 @@
                     </tr>
                 `;
             });
-
-            // Cargar zonas no asignadas
+            // Cargar solamente las zonas no asignadas para evitar duplicidades
             const unassignedSelect = document.getElementById('unassignedZones');
             unassignedSelect.innerHTML = '';
             zones.unassigned.forEach(zone => {
@@ -86,9 +86,31 @@
                 unassignedSelect.appendChild(option);
             });
 
-            // Mostrar modal
+            // Mostrar menú modal para la asignación de zonas/tareas
             const modal = new bootstrap.Modal(document.getElementById('assignModal'));
             modal.show();
+        }
+        async function deleteWorker(workerId) {
+            if (confirm('¿Estás seguro de que deseas eliminar este trabajador? Esta acción no se puede deshacer.')) {
+                const response = await fetch('../../modules/delete_worker.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ worker_id: workerId }),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert(result.success);
+                    loadWorkers(); 
+                    const backdrop = document.querySelector('.modal-backdrop');
+				if (backdrop) {
+					backdrop.remove();
+				}
+                } else {
+                    alert(result.error || 'Error al eliminar el trabajador.');
+                }
+            }
         }
 
         async function addZone() {
@@ -103,7 +125,7 @@
 
             const result = await response.json();
             if (result.success) {
-                openAssignModal(workerId); // Refrescar modal
+                openAssignModal(workerId); // Refrescar los cambios del modal en caso success
 				const backdrop = document.querySelector('.modal-backdrop');
 				if (backdrop) {
 					backdrop.remove();
@@ -123,7 +145,7 @@
 
             const result = await response.json();
             if (result.success) {
-                openAssignModal(workerId); // Refrescar modal
+                openAssignModal(workerId); // Refrescar los cambios del modal en caso success
 				const backdrop = document.querySelector('.modal-backdrop');
 				if (backdrop) {
 					backdrop.remove();
@@ -137,16 +159,16 @@
 			const modalInstance = bootstrap.Modal.getInstance(modalElement);
 
 			if (modalInstance) {
-				modalInstance.hide(); // Cierra el modal
+				modalInstance.hide(); 
 			}
 
-			// Asegurarse de que no quede el backdrop
+			// Asegurarse de que no quede el backdrop ( el "fondo" grisaceo al abrir el menu modal)
 			const backdrop = document.querySelector('.modal-backdrop');
 			if (backdrop) {
 				backdrop.remove();
 			}
 
-			// Limpiar contenido del modal (opcional)
+			// vaciar contenido del mnú modal( no se si usarlo )
 			document.getElementById('assignedZonesTableBody').innerHTML = '';
 			document.getElementById('unassignedZones').innerHTML = '';
 		}
