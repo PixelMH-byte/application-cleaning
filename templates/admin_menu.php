@@ -37,40 +37,47 @@ if ((int)$_SESSION['role_id'] !== 1) {
     </nav>
 
     <!-- Contenido principal -->
-    <div class="container mt-5 mt-sm-4">
+       <div class="container mt-5 mt-sm-4">
         <div class="row gy-3">
+            <!-- Botones del menú -->
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
+                    <img src="../src/PRECIOS.png" alt="Precios Icon" class="menu-icon mb-2">
                     <h5 class="card-title">Control de Precios</h5>
                     <a href="#" class="btn btn-warning">Gestionar</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
+                    <img src="../src/COSTEP.png" alt="Costos Icon" class="menu-icon mb-2">
                     <h5 class="card-title">Costes de Personal</h5>
                     <a href="#" class="btn btn-warning">Ver Costes</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
+                    <img src="../src/ZONAS.png" alt="Zonas Icon" class="menu-icon mb-2">
                     <h5 class="card-title">Zonas</h5>
                     <a href="manage_zones.php" class="btn btn-warning">Configurar</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
+                    <img src="../src/TRABAJADORES.png" alt="Trabajadores Icon" class="menu-icon mb-2">
                     <h5 class="card-title">Usuarios</h5>
                     <a href="admin/create_user.php" class="btn btn-warning">Administrar</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
+                    <img src="../src/ESTADISTICAS.png" alt="Estadísticas Icon" class="menu-icon mb-2">
                     <h5 class="card-title">Estadísticas</h5>
                     <a href="#" class="btn btn-warning">Resumen</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card text-center p-3 h-100">
+                    <img src="../src/INFORMES.png" alt="Informes Icon" class="menu-icon mb-2">
                     <h5 class="card-title">Informes</h5>
                     <a href="#" class="btn btn-warning">Descargar</a>
                 </div>

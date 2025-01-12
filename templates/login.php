@@ -6,6 +6,7 @@ require_once '../db/Database.php';
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+// Verificar si se envió el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
@@ -31,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['role_id'] = (int)$user['role_id'];
 
         // Redirigir según el rol
-        if ($_SESSION['role_id'] === 1) { // Rol administrador
+        if ($_SESSION['role_id'] === 1) {
             header('Location: admin_menu.php');
-        } elseif ($_SESSION['role_id'] === 2) { // Rol trabajador
+        } elseif ($_SESSION['role_id'] === 2) {
             header('Location: worker_menu.php');
         }
         exit;
@@ -41,6 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Correo electrónico o contraseña incorrectos.";
     }
 }
+
+// Verificar si la solicitud viene desde una pantalla móvil
+$isMobile = isset($_GET['mobile']) && $_GET['mobile'] === 'true';
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +73,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Ingresar</button>
         </form>
     </div>
-		    <?php include('footer.php'); ?>
+	 <!-- Incluir footer dinámico para la parte del login solamente "quitar las letras" -->
+    <?php 
+    if ($isMobile) {
+        include('footer2.php'); // Footer para móviles
+    } else {
+        include('footer2.php'); // Footer normal
+    }
+    ?>
 </body>
 </html>
