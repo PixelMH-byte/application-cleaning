@@ -269,15 +269,56 @@ body {
 @media (max-width: 768px) {
     .container {
         margin-top: 80px !important; 
+		margin-bottom: 60px;
     }
 	
-	.card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    /* width: 190px; */
-    height: 130px;
-    /* padding: 5px; */
-    margin-top: 15px;
+	/* Ajustar tarjetas en vista móvil */
+.card {
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.card h5 {
+    font-size: 16px;
+    color: #454773;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.card .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+    .table td,
+    .table th {
+        font-size: 14px; /* Reducir el tamaño del texto */
+        padding: 8px; /* Ajustar el relleno */
+    }
+
+    .table th {
+        white-space: nowrap; /* Evitar que el texto se corte */
+    }
+
+    .table td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Mostrar "..." para contenido largo */
+    }
+
+    .btn {
+        font-size: 12px; /* Botones más pequeños */
+        padding: 4px 8px;
+    }
+
+
+
+
+
+
 }
