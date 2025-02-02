@@ -1,0 +1,12 @@
+[2025-01-21 08:07:55] Datos recibidos: assignment_id = 3, qr_code = Zona: NAVE PSC
+Descripción: nave psc la cartuja
+QR: QR_678f772d93f60
+[2025-01-21 08:07:55] Código QR procesado: QR_678f772d93f60
+[2025-01-21 08:07:55] Resultado de la consulta: {"id":"3","status":"pendiente","start_time":null,"qr_code":"QR_678f772d93f60"}
+[2025-01-21 08:07:55] Tarea actualizada exitosamente.
+[2025-01-21 08:08:21] Datos recibidos: assignment_id = 3, qr_code = Zona: NAVE PSC
+Descripción: nave psc la cartuja
+QR: QR_678f772d93f60
+[2025-01-21 08:08:21] Código QR procesado: QR_678f772d93f60
+[2025-01-21 08:08:21] Resultado de la consulta: {"id":"3","status":"iniciado","start_time":"2025-01-21 08:07:55","qr_code":"QR_678f772d93f60"}
+[2025-01-21 08:08:21] Tarea actualizada exitosamente.
