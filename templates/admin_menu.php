@@ -44,7 +44,7 @@ if ((int)$_SESSION['role_id'] !== 1) {
                 <div class="card text-center p-3 h-100">
                     <img src="../src/PRECIOS.png" alt="Precios Icon" class="menu-icon mb-2">
                     <h5 class="card-title">Control de Precios</h5>
-                    <a href="#" class="btn btn-warning">Gestionar</a>
+                    <a href="admin/control_precios.php" class="btn btn-warning">Gestionar</a>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
